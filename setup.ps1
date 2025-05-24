@@ -1,4 +1,7 @@
-#Requires -RunAsAdministrator
+if (-not ([Security.Principal.WindowsPrincipal]([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Warning "This script requires administrator privileges to run."
+    exit 1
+}
 
 $repositoryUri = "https://github.com/kyedavey/win-setup/archive/refs/heads/main.zip"
 
