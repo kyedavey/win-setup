@@ -15,6 +15,6 @@ $softwareToRemove = @(
 Write-Host "`nProcessing Software for Removal`n" -ForegroundColor Yellow
 
 foreach ($software in $softwareToRemove) {
-    Write-Host "Removing $($software.name)..."
-        Get-AppxPackage -Name "*$($software.name)*" -AllUsers | Remove-AppxPackage -AllUsers
+    Write-Host "Removing $($software)..."
+        Get-AppxPackage -Name "*$($software)*" -AllUsers | Remove-AppxPackage -AllUsers
 }
